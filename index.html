@@ -1,0 +1,164 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Christopher DelCollo &copy; christopharii.com</title>
+  <meta name="description" content="Christopher DelCollo is christopharii.com" />
+  <meta name="author" content="christopharii" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="img/awp-fav-icon.png" type="image/x-icon" rel="icon" />
+  <link href="img/awp-fav-icon.png" type="image/x-icon" rel="shortcut icon" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  
+  <link rel="stylesheet" href="css/add2home.css">
+
+  <!-- CSS: implied media=all -->
+   <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <!-- Fonts from Google -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic' rel='stylesheet' type='text/css'>
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>  
+</head>
+
+<body>
+<div id="mainscreen">
+    <div id="cbutton"></div>
+</div>
+<div id="modal">
+  <div id="modal1close" class="closebox">X</div>
+  <h2>Photography by Christopher DelCollo</h2>
+  <p>Thanks for stopping by. Today this website features some of my photography. See more photos <a href="http://mmm.photoedible.com" target="_blank" title="mmm.photoedible.com">here</a> and <a href="http://flickr.com/photos/nubiany" target="_blank" title="flickr">here</a>.</p>
+  <p>When I'm not playing here, I'm the President at <a href="http://www.awpny.com">AWP</a>, a casually hip design agency in Ithaca, New York.</p>
+  <p style="margin-left:-5px;" class="monoicons"><a href="http://www.twitter.com/christopharii" target="_blank" title="Twitter" class="dot"><img src="/img/twitter.gif" /></a><a href="http://www.linkedin.com/in/christopherdelcollo" target="_blank" title="LinkedIn" class="dot"><img src="/img/linkedin.gif" /></a><a href="http://www.facebook.com/cdelcollo" target="_blank" title="Facebook" class="dot"><img src="/img/facebook.gif" /></a><a href="http://www.flickr.com/photos/nubiany/" target="_blank" title="Flickr" class="dot"><img src="/img/flickr.gif" /></a><a href="http://www.youtube.com/christopharii" target="_blank" title="YouTube" class="dot"><img src="/img/youtube.gif" /></a></p>
+</div>
+
+  <script src="js/libs/jquery-1.6.2.min.js"></script>
+
+  <script src="js/jquery.easing-1.3.pack.js"></script>
+  <script src="js/jquery.backstretch.min.js"></script>
+
+  <script type="text/javascript">
+
+$(window).load(function() {
+	
+	//fadein
+    $('#cbutton').delay(1200).animate({'margin-top': '8%'}, 800, 'easeOutBack');
+	
+});
+
+
+  $(document).ready(function(){
+  
+    //fadein
+    //$('#cbutton').delay(1500).animate({'margin-top': '8%'}, 800, 'easeOutBack');
+	
+	//UI
+	$('#cbutton').click(function() {
+	  $('#cbutton').fadeOut(500);
+	  $('#modal').delay(500).animate({top: '0px'}, 500);
+	});
+	
+	$('#modal1close').click(function() {
+	  $('#modal').animate({top: '-1000px'}, 500);
+	  $('#cbutton').delay(500).fadeIn(500);
+	});
+
+    //function for shuffling the images
+    Array.prototype.shuffle = function() {
+      var s = [];
+      while (this.length) s.push(this.splice(Math.random() * this.length, 1)[0]);
+      while (s.length) this.push(s.pop()); 
+      return this;
+    }
+
+	//set images
+	var images = [
+		"img/dog.jpg",
+		"img/grandma.jpg",
+		"img/granola.jpg",
+		"img/finger.jpg",
+		"img/baby.jpg",
+		"img/greenbeansalad.jpg",
+		"img/ship.jpg",
+		"img/bread.jpg",
+		"img/dandelion.jpg",
+		"img/wallpaper.jpg",
+		"img/bluebirdie.jpg",
+		"img/singer.jpg",
+		"img/car.jpg",
+		"img/girl.jpg",
+		"img/laugh.jpg",
+		"img/boy.jpg",
+		"img/cc.jpg",
+		"img/lele.jpg",
+		"img/cone.jpg",
+		"img/boot.jpg"
+	];
+	
+	//shuffle them
+	images.shuffle();
+	
+	//pick the first 8 to load
+	images = images.slice(0,8);
+	
+	//preload them
+	$(images).each(function(){
+	   $('<img/>')[0].src = this; 
+	});
+
+	//rotate through them...
+	var index = 0;
+	
+	//...crossfade speed .5 sec
+	$.backstretch(images[index], {speed: 500});
+
+	//...delay between slides 5 sec
+	var bgSlideshow;
+	bgSlideshow = setInterval(function() {
+		index = (index >= images.length - 1) ? 0 : index + 1;
+		$.backstretch(images[index]);
+		console.log("looping");
+	}, 5000);
+	
+  });
+  </script>
+  
+  <script type="application/javascript" src="js/add2home.js"></script>
+  
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>
+  /*
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+    */
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
