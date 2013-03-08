@@ -1,0 +1,9 @@
+scheme: sftp
+host: ftp.ord1-1.websitesettings.com
+username: christopharii
+password: mojophari
+path: www.christophari.com/web/content
+
+exclude:
+    - .gitignore
+    - dandelion.yml
