@@ -248,19 +248,14 @@ h1 { font-size: 100px; text-transform: uppercase; line-height: 0.9; font-family:
 
 h2 { font-weight: 300; font-style: italic; font-size: 30px;}
 
-#headline {
-	float: left;
-	width: 70%;
-	margin-left: 8%;
-	margin-top: 8%;
-	z-index: 10;
+#mainscreen {
+	
 }
 
 #cbutton {
-	float: right;
-	margin: 8%;
-	margin-top: -8%;
-	z-index: 120;
+	position: fixed; 
+	top:-8%;
+	right:8%;
 	cursor: pointer;
 	background: url('/img/c4.png');
 	height: 82px;

@@ -14,9 +14,10 @@
   <link href="img/christopharii-fav-icon.png" type="image/x-icon" rel="shortcut icon" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
+   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/add2home.css">
    <link rel="stylesheet" href="css/bigvideo.css">
-   <link rel="stylesheet" href="css/style.css">
+   
 
   <!-- Fonts from Google -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -25,13 +26,11 @@
   <script src="js/libs/modernizr-2.5.3.min.js"></script>  
 </head>
 <body>
-<div id="mainscreen">
-    <div id="cbutton"></div>
-</div>
+<div id="cbutton"></div>
 <div id="modal">
   <div id="modal1close" class="closebox">X</div>
-  <h2>Photography by Christopher DelCollo</h2>
-  <p>Thanks for stopping by. Today this website features some of my video art.</p>
+  <h2>Motion Graphics Video by Christopher DelCollo</h2>
+  <p>Thanks for stopping by. Today this website features some of my video art. If you can't see the video, try looking <a href="http://youtu.be/7PvgUwhQun4">here.</a></p>
   <p>When I'm not playing here, I'm the President at <a href="http://www.awpny.com">AWP</a>, a casually hip design agency in Ithaca, New York.</p>
   <p style="margin-left:-5px;" class="monoicons"><a href="http://www.twitter.com/christopharii" target="_blank" title="Twitter" class="dot"><img src="/img/twitter.gif" /></a><a href="http://www.linkedin.com/in/christopherdelcollo" target="_blank" title="LinkedIn" class="dot"><img src="/img/linkedin.gif" /></a><a href="http://www.facebook.com/cdelcollo" target="_blank" title="Facebook" class="dot"><img src="/img/facebook.gif" /></a><a href="http://www.flickr.com/photos/nubiany/" target="_blank" title="Flickr" class="dot"><img src="/img/flickr.gif" /></a><a href="http://www.youtube.com/christopharii" target="_blank" title="YouTube" class="dot"><img src="/img/youtube.gif" /></a></p>
 </div>
@@ -46,12 +45,6 @@
 
   <script type="text/javascript">
 
-  $(window).load(function() {
-	
-	
-	
-  });
-
   $(document).ready(function(){
 	
     // initialize BigVideo
@@ -64,7 +57,7 @@
 	}
 	
 	//fadein
-    $('#cbutton').delay(1200).animate({'margin-top': '8%'}, 800, 'easeOutBack');
+    $('#cbutton').delay(1200).animate({'top': '8%'}, 800, 'easeOutBack');
 
 	//modal UI
 	$('#cbutton').click(function() {
