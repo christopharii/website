@@ -15,13 +15,14 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
    <link rel="stylesheet" href="css/add2home.css">
+   <link rel="stylesheet" href="css/bigvideo.css">
    <link rel="stylesheet" href="css/style.css">
 
   <!-- Fonts from Google -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic' rel='stylesheet' type='text/css'>
 
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>  
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>  
 </head>
 <body>
 <div id="mainscreen">
@@ -35,22 +36,36 @@
   <p style="margin-left:-5px;" class="monoicons"><a href="http://www.twitter.com/christopharii" target="_blank" title="Twitter" class="dot"><img src="/img/twitter.gif" /></a><a href="http://www.linkedin.com/in/christopherdelcollo" target="_blank" title="LinkedIn" class="dot"><img src="/img/linkedin.gif" /></a><a href="http://www.facebook.com/cdelcollo" target="_blank" title="Facebook" class="dot"><img src="/img/facebook.gif" /></a><a href="http://www.flickr.com/photos/nubiany/" target="_blank" title="Flickr" class="dot"><img src="/img/flickr.gif" /></a><a href="http://www.youtube.com/christopharii" target="_blank" title="YouTube" class="dot"><img src="/img/youtube.gif" /></a></p>
 </div>
 
-  <script src="js/libs/jquery-1.6.2.min.js"></script>
-
+  <script src="js/libs/jquery-1.7.2.min.js"></script>
   <script src="js/jquery.easing-1.3.pack.js"></script>
-  <script src="js/jquery.backstretch.min.js"></script>
+  <!-- BigVideo Dependencies -->
+  <script src="js/jquery-ui-1.8.22.custom.min.js"></script>
+  <script src="js/jquery.imagesloaded.min.js"></script>
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
+  <script src="js/bigvideo.js"></script>
 
   <script type="text/javascript">
 
   $(window).load(function() {
 	
-	//fadein
-    $('#cbutton').delay(1200).animate({'margin-top': '8%'}, 800, 'easeOutBack');
+	
 	
   });
 
   $(document).ready(function(){
 	
+    // initialize BigVideo
+	var BV = new $.BigVideo();
+	BV.init();
+	if (Modernizr.touch) {
+	    BV.show('img/lele.jpg');
+	} else {
+	    BV.show('video/bg.mp4',{ambient:true});
+	}
+	
+	//fadein
+    $('#cbutton').delay(1200).animate({'margin-top': '8%'}, 800, 'easeOutBack');
+
 	//modal UI
 	$('#cbutton').click(function() {
 	  $('#cbutton').fadeOut(500);

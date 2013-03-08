@@ -233,7 +233,7 @@ html[xmlns] .clearfix {
 }
 
 body {
-	background-color: yellow;
+	background-color: #93dee5;
 	font-family: 'Open Sans Condensed', 'Arial Narrow', sans-serif;
 	font-size: 16px;
 	font-weight: 300;
@@ -260,7 +260,7 @@ h2 { font-weight: 300; font-style: italic; font-size: 30px;}
 	float: right;
 	margin: 8%;
 	margin-top: -8%;
-	z-index: 20;
+	z-index: 120;
 	cursor: pointer;
 	background: url('/img/c4.png');
 	height: 82px;
