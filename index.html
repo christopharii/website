@@ -48,12 +48,12 @@
   $(document).ready(function(){
 	
     // initialize BigVideo
-	var BV = new $.BigVideo();
+	var BV = new $.BigVideo({useFlashForFirefox:false});
 	BV.init();
 	if (Modernizr.touch) {
 	    BV.show('video/bg.jpg');
 	} else {
-	    BV.show('video/bg.mp4',{ambient:true});
+	    BV.show('video/bg.mp4',{altSource:'video/bg.ogv'});
 	}
 	
 	//fadein

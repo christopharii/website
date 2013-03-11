@@ -282,7 +282,7 @@
 
         BigVideo.show = function(source,options) {
         	if (options === undefined) options = {};
-			isAmbient = options.ambient === true;
+			isAmbient = true;
 			if (isAmbient || options.doLoop) settings.doLoop = true;
 			if (typeof(source) === 'string') {
 				var ext = source.substring(source.lastIndexOf('.')+1);
